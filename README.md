@@ -1,0 +1,1 @@
+https://codemaker2016.medium.com/understanding-deepeval-a-practical-guide-for-evaluating-large-language-models-d7272b6c2634

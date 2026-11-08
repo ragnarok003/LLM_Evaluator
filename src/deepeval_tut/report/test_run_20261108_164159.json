@@ -1,0 +1,113 @@
+{
+  "testCases": [
+    {
+      "name": "test_case_0",
+      "input": "How long do refunds take?",
+      "actualOutput": "Refunds are processed within 7 business days",
+      "retrievalContext": [
+        "Refunds are processed within 7 business days for orders under 30 days old."
+      ],
+      "flaky": false,
+      "success": true,
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.7,
+          "success": true,
+          "score": 1.0,
+          "reason": "The score is 1.00 because the provided information is perfectly relevant to the input query, demonstrating a complete and accurate response.",
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gemma4:e2b (Ollama)",
+          "evaluationCost": 0.0,
+          "inputTokenCount": 0,
+          "outputTokenCount": 0,
+          "verboseLogs": "Statements:\n[\n    \"Refunds are processed within 7 business days\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": null\n    }\n]"
+        },
+        {
+          "name": "Faithfulness",
+          "threshold": 0.7,
+          "success": true,
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions to summarize.",
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gemma4:e2b (Ollama)",
+          "evaluationCost": 0.0,
+          "inputTokenCount": 0,
+          "outputTokenCount": 0,
+          "verboseLogs": "Truths (limit=None):\n[\n    \"Refunds are processed within 7 business days for orders under 30 days old.\"\n] \n \nClaims:\n[\n    \"Refunds are processed within 7 business days\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": null\n    }\n]"
+        }
+      ],
+      "runDuration": 20.23467278399994,
+      "evaluationCost": 0.0,
+      "order": 0
+    },
+    {
+      "name": "test_case_1",
+      "input": "How long do refunds take?",
+      "actualOutput": "We refund instantly by UPI, and we also give free vouchers",
+      "retrievalContext": [
+        "Refunds are processed within 7 business days for orders under 30 days old."
+      ],
+      "flaky": false,
+      "success": false,
+      "metricsData": [
+        {
+          "name": "Answer Relevancy",
+          "threshold": 0.7,
+          "success": false,
+          "score": 0.5,
+          "reason": "The score is 0.50 because while the statement addresses the topic of refunds, it focuses on the method of refund (UPI) rather than directly answering the specific question about the duration of the refund process.",
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gemma4:e2b (Ollama)",
+          "evaluationCost": 0.0,
+          "inputTokenCount": 0,
+          "outputTokenCount": 0,
+          "verboseLogs": "Statements:\n[\n    \"We refund instantly by UPI\",\n    \"we also give free vouchers\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"yes\",\n        \"reason\": null\n    },\n    {\n        \"verdict\": \"no\",\n        \"reason\": \"The statement discusses the method of refund (instantly by UPI) rather than the duration of the refund process.\"\n    }\n]"
+        },
+        {
+          "name": "Faithfulness",
+          "threshold": 0.7,
+          "success": true,
+          "score": 1.0,
+          "reason": "The score is 1.00 because there are no contradictions, indicating perfect faithfulness between the actual output and the retrieval context.",
+          "strictMode": false,
+          "flaky": false,
+          "evaluationModel": "gemma4:e2b (Ollama)",
+          "evaluationCost": 0.0,
+          "inputTokenCount": 0,
+          "outputTokenCount": 0,
+          "verboseLogs": "Truths (limit=None):\n[\n    \"Refunds are processed within 7 business days for orders under 30 days old.\"\n] \n \nClaims:\n[\n    \"We refund instantly by UPI\",\n    \"we also give free vouchers\"\n] \n \nVerdicts:\n[\n    {\n        \"verdict\": \"borderline\",\n        \"reason\": \"The retrieval context only specifies the refund processing time (7 business days for orders under 30 days old) and does not mention instant refunds by UPI or the provision of free vouchers.\"\n    },\n    {\n        \"verdict\": \"borderline\",\n        \"reason\": \"The retrieval context does not provide any information regarding whether free vouchers are given.\"\n    }\n]"
+        }
+      ],
+      "runDuration": 23.813691615000153,
+      "evaluationCost": 0.0,
+      "order": 1
+    }
+  ],
+  "conversationalTestCases": [],
+  "metricsScores": [
+    {
+      "metric": "Answer Relevancy",
+      "scores": [1.0, 0.5],
+      "passes": 1,
+      "fails": 1,
+      "errors": 0
+    },
+    {
+      "metric": "Faithfulness",
+      "scores": [1.0, 1.0],
+      "passes": 2,
+      "fails": 0,
+      "errors": 0
+    }
+  ],
+  "prompts": [],
+  "testPassed": 1,
+  "testFailed": 1,
+  "runDuration": 44.0738787790001,
+  "evaluationCost": 0.0,
+  "official": false
+}
