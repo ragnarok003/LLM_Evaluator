@@ -1,0 +1,25 @@
+[project]
+name = "deepeval-tut"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "vikram", email = "hariragave@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "deepeval>=4.3.3",
+    "ipykernel>=7.4.0",
+    "ipywidgets>=8.1.9",
+    "langchain>=1.4.9",
+    "langchain-ollama>=1.1.0",
+    "numpy>=2.5.4",
+    "ollama>=0.6.3",
+]
+
+[project.scripts]
+deepeval-tut = "deepeval_tut:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
